@@ -12,9 +12,9 @@
 #' @param NewType Argument for the currency type you wish to convert to. Choices are Galleon, Sickle, or Knut.
 #' @return A data frame of items with the newly converted currency denominations.
 
-wiz2wiz <- function(hpitems,Cost,CurrencyType,NewType = c("Galleon","Sickle","Knut")){
-  NewCost <- vector(mode = "numeric", length = length(hpitems)) # create empty vector for new cost to be saved
-  NewCurrency <- vector(mode = "character", length = length(hpitems)) #create empty vector for new currency to be saved
+wiz2wiz <- function(hpitems,Cost,CurrencyType,NewType){
+  NewCost <- vector(length = length(hpitems)) # create empty vector for new cost to be saved
+  NewCurrency <- vector(length = length(hpitems)) #create empty vector for new currency to be saved
     for (i in 1:nrow(hpitems)) {
       if (CurrencyType[i] == NewType) {
         NewCost[i] <- Cost[i]
@@ -33,7 +33,7 @@ wiz2wiz <- function(hpitems,Cost,CurrencyType,NewType = c("Galleon","Sickle","Kn
       }
       NewCurrency[i] <- NewType
     } # end of the for loop
-  converted <- cbind(hpitems,NewCost,NewCurrency)
+  converted <- as.data.frame(cbind(hpitems,NewCost,NewCurrency))
   return(converted)
   }
 
