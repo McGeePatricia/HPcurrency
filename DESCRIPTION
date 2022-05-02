@@ -1,7 +1,7 @@
 Package: HPcurrency
 Type: Package
 Title: Convert Harry Potter Currency Between Itself and British Pounds
-Version: 0.0.0.9000
+Version: 0.1.0
 Author@R: person("Patricia", "McGee", email = "bauman2@usf.edu", 
   role = c("aut", "cre"))
 Description: This package is designed to convert Harry Potter Currency
@@ -9,3 +9,5 @@ Description: This package is designed to convert Harry Potter Currency
 License: CC0
 Encoding: UTF-8
 LazyData: true
+Depends: 
+    R (>= 2.10)
